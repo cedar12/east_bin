@@ -91,7 +91,7 @@ jobs:
           type: zip
           filename: ${{ matrix.arch }}.zip
           path: ./east*
-          exclusions: '*.d /easts /eastc'
+          exclusions: '*.d'
     
       - name: Release Drafter
         id: create_release
