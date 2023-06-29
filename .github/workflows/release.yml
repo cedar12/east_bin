@@ -120,6 +120,10 @@ jobs:
           - mips-unknown-linux-gnu
           - aarch64-unknown-linux-gnu
           - aarch64-unknown-linux-musl
+          - arm-unknown-linux-gnueabi
+          - arm-unknown-linux-musleabi
+          - armv7-unknown-linux-gnueabi
+          - armv7-unknown-linux-musleabi
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
