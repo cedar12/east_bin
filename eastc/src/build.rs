@@ -4,7 +4,8 @@ use std::{path::{PathBuf}, fs};
 extern crate winres;
 
 fn main() {
-    if cfg!(target_os = "windows") {
+    #[cfg(windows)]
+    {
         let mut res = winres::WindowsResource::new();
         
         // res.set_icon("path/to/your_icon.ico");
