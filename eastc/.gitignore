@@ -1,0 +1,6 @@
+/target
+/log
+
+*.exe
+server.yml
+agent.yml
