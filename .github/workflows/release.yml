@@ -83,8 +83,8 @@ jobs:
       - run: copy target/${{ matrix.arch }}/release/east* ./
       - run: copy easts/easts.yml ./
       - run: copy eastc/eastc.yml ./
-      - run: rd /s /q easts
-      - run: rd /s /q eastc
+      - run: rd /q/s easts
+      - run: rd /q/s eastc
 
       - uses: thedoctor0/zip-release@0.7.1
         with:
