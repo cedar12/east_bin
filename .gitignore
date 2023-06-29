@@ -3,7 +3,6 @@
 
 
 *.exe
-server.yml
-agent.yml
-eastc.yml
-easts.yml
+
+/eastc.yml
+/easts.yml
