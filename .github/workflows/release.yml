@@ -32,7 +32,7 @@ jobs:
           name: ${{ matrix.arch }}
           path: target/${{ matrix.arch }}/release/east*
         
-      - run: zip -j ${{ matrix.arch }}  target/${{ matrix.arch }}/release/easts target/${{ matrix.arch }}/release/eastc target/${{ matrix.arch }}/release/easts.yml target/${{ matrix.arch }}/release/eastc.yml
+      - run: zip -j ${{ matrix.arch }}  target/${{ matrix.arch }}/release/easts target/${{ matrix.arch }}/release/eastc easts/easts.yml eastc/eastc.yml
     
       - name: Release Drafter
         id: create_release
@@ -81,13 +81,15 @@ jobs:
           path: target/${{ matrix.arch }}/release/east*
 
       - run: copy target/${{ matrix.arch }}/release/east* ./
+      - run: copy easts/easts.yml ./
+      - run: copy eastc/eastc.yml ./
 
       - uses: thedoctor0/zip-release@0.7.1
         with:
           type: zip
           filename: ${{ matrix.arch }}.zip
           path: ./east*
-          exclusions: '*.d'
+          exclusions: '*.d /easts /eastc'
     
       - name: Release Drafter
         id: create_release
@@ -135,7 +137,7 @@ jobs:
         with:
           name: ${{ matrix.arch }}
           path: target/${{ matrix.arch }}/release/east*
-      - run: zip -j ${{ matrix.arch }} target/${{ matrix.arch }}/release/easts target/${{ matrix.arch }}/release/eastc target/${{ matrix.arch }}/release/easts.yml target/${{ matrix.arch }}/release/eastc.yml
+      - run: zip -j ${{ matrix.arch }} target/${{ matrix.arch }}/release/easts target/${{ matrix.arch }}/release/eastc  easts/easts.yml eastc/eastc.yml
     
       - name: Release Drafter
         id: create_release
